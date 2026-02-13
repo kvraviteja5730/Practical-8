@@ -1,0 +1,41 @@
+
+Test the function
+
+{
+    "operation": "echo",
+    "payload": {
+        "somekey1": "somevalue1",
+        "somekey2": "somevalue2"
+    }
+}
+
+
+Test the integration of API Gateway, Lambda, and DynamoDB
+
+{
+  "operation": "create",
+  "payload": {
+    "Item": {
+      "id": "1234ABCD",
+      "number": 5
+    }
+  }
+}
+
+To update the item in your DynamoDB table
+
+{
+    "operation": "update",
+    "payload": {
+        "Key": {
+            "id": "1234ABCD"
+        },
+        "UpdateExpression": "SET #num = :newNum",
+        "ExpressionAttributeNames": {
+            "#num": "number"
+        },
+        "ExpressionAttributeValues": {
+            ":newNum": 10
+        }
+    }
+}
